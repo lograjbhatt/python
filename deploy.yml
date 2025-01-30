@@ -6,7 +6,7 @@
       docker_container:
         name: flask
         state: stopped
-        image: lograjbhatt/flask
+        image: lograj/flask
 
     - name: Remove the stopped container
       docker_container:
@@ -15,14 +15,14 @@
 
     - name: Pull the latest image from Docker Hub
       docker_image:
-        name: lograjbhatt/flask
+        name: lograj/flask
         tag: latest
         source: pull
 
     - name: Run the container with the latest image
       docker_container:
         name: flask
-        image: lograjbhatt/flask:latest
+        image: lograj/flask:latest
         state: started
         detach: yes
         tty: yes
